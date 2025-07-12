@@ -1,0 +1,164 @@
+/* Page layout - full screen, remove margins/paddings */
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+
+/* Container for the full page layout */
+
+.container-fluid {
+    display: flex;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+
+/* Left side image section */
+
+/* Right side login form section */
+.right-section {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #1e3c72, rgb(69, 23, 30));
+    padding: 30px;
+    height: 100%;
+}
+
+/* Left side image section */
+.left-section {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    background: linear-gradient(to right, #1e3c72, rgb(69, 23, 30));
+}
+
+
+
+/* Card for the login form */
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
+/* Form styling */
+
+.form-control {
+    border-radius: 5px;
+}
+
+.h3 {
+    font-style: bold;
+}
+
+
+/* Button styling */
+
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-primary:hover {
+    background-color: #004494;
+    border-color: #004494;
+}
+
+
+/* Text styles */
+
+.text-center {
+    text-align: center;
+   
+}
+
+
+/* Styling the alert messages */
+
+.alert {
+    margin-bottom: 20px;
+}
+
+
+/* Google Sign-In button */
+
+.g_id_signin {
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* Container styles */
+
+.container-fluid {
+    display: flex;
+}
+
+.left-section {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f7f7f7;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Toggle switch button */
+
+.switch-container {
+    text-align: center;
+}
+
+.switch-btn {
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 30px;
+    background: none;
+    transition: 0.3s;
+}
+
+.switch-btn:hover {
+    background: #007bff;
+    color: #fff;
+}

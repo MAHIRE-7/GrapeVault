@@ -1,0 +1,443 @@
+@import url('components.css');
+:root {
+    --transition: all 0.3s ease;
+    --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.dashboard .box-container .box {
+    padding: 2rem;
+    text-align: center;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-radius: 1rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard .box-container .box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.dashboard .box-container .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--wine_red), var(--light-bg));
+}
+
+.dashboard .box-container .box h3 {
+    font-size: 3.5rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.dashboard .box-container .box p {
+    font-size: 2rem;
+    background-color: var(--light-bg);
+    color: var(--light-color);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border: var(--border);
+    border-radius: 0.5rem;
+    color: var(--black);
+    transition: var(--transition);
+}
+
+.dashboard .box-container .box:hover p {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* Form Styles */
+
+.add-products form,
+.update-product form {
+    max-width: 70rem;
+    padding: 3rem;
+    margin: 0 auto;
+    text-align: center;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-radius: 1rem;
+    transition: var(--transition);
+}
+
+.add-products form:hover,
+.update-product form:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.add-products form .flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.add-products form .flex .inputBox {
+    width: calc(50% - 1rem);
+    position: relative;
+}
+
+.add-products form .box,
+.update-product form .box {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1.4rem 1.6rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    border-radius: 0.8rem;
+    background-color: var(--light-bg);
+    border: var(--border);
+    transition: var(--transition);
+}
+
+.add-products form .box:focus,
+.update-product form .box:focus {
+    border-color: var(--wine_red);
+    box-shadow: 0 0 0 3px rgba(188, 60, 60, 0.2);
+}
+
+.add-products form textarea {
+    height: 20rem;
+    resize: none;
+}
+
+
+/* Button Styles */
+
+.btn {
+    transition: var(--transition) !important;
+    transform: translateY(0);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Show Products */
+
+.show-products {
+    padding-top: 0;
+}
+
+.show-products .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+    gap: 2.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.show-products .box-container .box {
+    text-align: center;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-radius: 1rem;
+    padding: 2rem;
+    position: relative;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.show-products .box-container .box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.show-products .box-container .box .price {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--wine_red), #c0392b);
+    border-radius: 0.5rem;
+    z-index: 1;
+}
+
+.show-products .box-container .box .price::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    border-radius: 0.5rem;
+}
+
+.show-products .box-container .box img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+}
+
+.show-products .box-container .box:hover img {
+    transform: scale(1.02);
+}
+
+.show-products .box-container .box .name {
+    margin: 1rem 0;
+    font-size: 2.2rem;
+    color: var(--black);
+    font-weight: 700;
+}
+
+.show-products .box-container .box .cat {
+    font-size: 1.8rem;
+    color: var(--wine_red);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.show-products .box-container .box .details {
+    padding-top: 1rem;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--light-color);
+}
+
+
+/* Update Product */
+
+.update-product form img {
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.update-product form:hover img {
+    transform: scale(1.01);
+}
+
+
+/* Orders and Users */
+
+.placed-orders .box-container,
+.user-accounts .box-container,
+.messages .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+    gap: 2.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.placed-orders .box-container .box,
+.user-accounts .box-container .box,
+.messages .box-container .box {
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.placed-orders .box-container .box:hover,
+.user-accounts .box-container .box:hover,
+.messages .box-container .box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.placed-orders .box-container .box p,
+.messages .box-container .box p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1.8rem;
+    color: var(--light-color);
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--light-bg);
+}
+
+.placed-orders .box-container .box p:last-child,
+.messages .box-container .box p:last-child {
+    border-bottom: none;
+}
+
+.placed-orders .box-container .box p span,
+.messages .box-container .box p span,
+.user-accounts .box-container .box p span {
+    color: var(--wine_red);
+    font-weight: 600;
+}
+
+.placed-orders .box-container .box .drop-down {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.8rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    background-color: var(--light-bg);
+    margin: 1rem 0;
+    transition: var(--transition);
+}
+
+.placed-orders .box-container .box .drop-down:focus {
+    border-color: var(--wine_red);
+    box-shadow: 0 0 0 3px rgba(188, 60, 60, 0.2);
+}
+
+
+/* User Accounts */
+
+.user-accounts .box-container .box {
+    text-align: center;
+}
+
+.user-accounts .box-container .box img {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 5px solid var(--light-bg);
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.user-accounts .box-container .box:hover img {
+    transform: scale(1.05);
+    border-color: var(--wine_red);
+}
+
+.user-accounts .box-container .box p {
+    line-height: 1.6;
+    padding: 0.8rem 0;
+    font-size: 1.8rem;
+    color: var(--light-color);
+}
+
+
+/* Messages */
+
+.messages .box-container .box {
+    position: relative;
+}
+
+.messages .box-container .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--wine_red), var(--light-bg));
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .add-products form .flex .inputBox {
+        width: 100%;
+    }
+    .dashboard .box-container,
+    .show-products .box-container,
+    .placed-orders .box-container,
+    .user-accounts .box-container,
+    .messages .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    }
+}
+
+@media (max-width: 450px) {
+    .dashboard .box-container,
+    .show-products .box-container,
+    .placed-orders .box-container,
+    .user-accounts .box-container,
+    .messages .box-container {
+        grid-template-columns: 1fr;
+    }
+    .update-product form img {
+        height: auto;
+        width: 100%;
+    }
+    .add-products form,
+    .update-product form {
+        padding: 2rem;
+    }
+}
+
+
+/* Animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dashboard .box-container .box,
+.add-products form,
+.show-products .box-container .box,
+.placed-orders .box-container .box,
+.user-accounts .box-container .box,
+.messages .box-container .box {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+
+/* Loading State */
+
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

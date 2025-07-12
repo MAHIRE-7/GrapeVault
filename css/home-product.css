@@ -1,0 +1,121 @@
+/* General styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Product section title */
+
+h1.title {
+    text-align: center;
+    color: #360000;
+    margin: 20px 0;
+}
+
+
+/* Card grid container */
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    height: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* Product card styling */
+
+.box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    position: relative;
+    text-align: center;
+    padding: 15px;
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    max-height: 150px;
+}
+
+.box h3 {
+    margin: 15px 0;
+    color: #360000;
+}
+
+
+/* Product price badge */
+
+.price {
+    background-color: #ee7272;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-weight: bold;
+}
+
+
+/* Button styling */
+
+.btn,
+.option-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn {
+    background-color: #360000;
+    color: #fff;
+}
+
+.option-btn {
+    background-color: #a31818;
+    color: #fff;
+}
+
+.btn:hover,
+.option-btn:hover {
+    background-color: #ee7272;
+}
+
+
+/* Quantity input styling */
+
+.qty {
+    width: 50px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+
+/* Message if no products are available */
+
+.empty {
+    text-align: center;
+    color: #777;
+    padding: 20px;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Failed</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8d7da;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        .crossmark {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d9534f, #b71c1c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: pop 0.6s ease-out;
+            box-shadow: 0 0 20px rgba(217, 83, 79, 0.5);
+            margin: 0 auto;
+        }
+        .crossmark:after {
+            content: '\2716';
+            font-size: 50px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        @keyframes pop {
+            0% { transform: scale(0); opacity: 0; }
+            80% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message {
+            font-size: 26px;
+            color: #b71c1c;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .sub-message {
+            font-size: 16px;
+            color: #666;
+            margin-top: 10px;
+        }
+        .retry-button {
+            margin-top: 20px;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+        .retry-button:hover {
+            background-color: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="crossmark"></div>
+        <div class="message">Verification failed </div>
+        <div class="sub-message">Something went wrong. Please try again.</div>
+        <button class="retry-button" onclick="backcheck()">back to checkout</button>
+    </div>
+
+    <script>
+        function backcheck() {
+            window.location.href = "checkout.php"; 
+        }
+    </script>
+</body>
+</html>

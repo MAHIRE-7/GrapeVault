@@ -1,0 +1,154 @@
+/* General styling */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.header {
+    position: relative;
+    background-color: #360000;
+    /* Theme color */
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    margin: 0 10px;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Wave animation for links */
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: wave 2s infinite ease-in-out;
+    transform: translateX(-100%);
+}
+
+.navbar a:hover::before {
+    animation: wave 0.5s forwards;
+    transform: translateX(0%);
+}
+
+
+/* Sea wave background effect for header */
+
+.header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -200px;
+    width: 400%;
+    height: 200px;
+    background: url('https://i.imgur.com/ovrMvK2.png') repeat-x;
+    /* Wave image */
+    opacity: 0.5;
+    animation: waves 8s infinite linear;
+}
+
+
+/* Wave animation for the header */
+
+@keyframes waves {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* Icons */
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    position: relative;
+    padding: 10px;
+    background-color: #360000;
+    overflow: hidden;
+}
+
+
+/* Wave animation for icons div */
+
+.icons::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -200px;
+    width: 400%;
+    height: 200px;
+    background: url('https://i.imgur.com/ovrMvK2.png') repeat-x;
+    /* Wave image */
+    opacity: 0.3;
+    animation: waves 8s infinite linear;
+}
+
+.icons div,
+.icons a {
+    color: #fff;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+/* Profile */
+
+.profile {
+    display: none;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#user-btn.active+.profile {
+    display: block;
+}
+
+
+/* Flex buttons */
+
+.flex-btn {
+    display: flex;
+    gap: 10px;
+}
+
+.flex-btn a {
+    padding: 5px 10px;
+    background-color: #360000;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+}
